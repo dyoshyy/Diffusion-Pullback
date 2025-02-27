@@ -5,6 +5,12 @@ from modules.edit import (
     EditUncondDiffusion,
 )
 
+import torch.backends.cuda
+
+torch.backends.cuda.enable_flash_sdp(False)
+torch.backends.cuda.enable_mem_efficient_sdp(False)  
+torch.backends.cuda.enable_math_sdp(True) 
+
 if __name__ == "__main__":
     ##########
     # preset #
